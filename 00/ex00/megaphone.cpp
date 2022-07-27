@@ -8,9 +8,9 @@ int	main(int ac, char *av[])
 	}
 	else
 	{
-		for (size_t i = 1; i < ac; i++)
+		for (int i = 1; i < ac; i++)
 		{
-			for (size_t j = 0; av[i][j]; j++)
+			for (int j = 0; av[i][j]; j++)
 			{
 				std::cout << static_cast<char>(std::toupper(av[i][j]));	
 			}

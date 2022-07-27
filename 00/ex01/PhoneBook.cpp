@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 21:14:18 by youjeon           #+#    #+#             */
-/*   Updated: 2022/07/27 22:03:21 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/07/27 22:44:17 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ PhoneBook::PhoneBook(void)
 
 void	PhoneBook::AddContact(void)
 {
-	Contact contact;
-	contact.AddContect();
-	this->contacts[index % 8] = contact;
+	this->contacts[index % 8].AddContect();
 	this->index++;
 }
 

@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 21:14:18 by youjeon           #+#    #+#             */
-/*   Updated: 2022/07/27 22:44:17 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/07/27 22:56:03 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ PhoneBook::PhoneBook(void)
 
 void	PhoneBook::AddContact(void)
 {
-	this->contacts[index % 8].AddContect();
+	this->contacts[index % 8].AddContact();
 	this->index++;
 }
 
@@ -40,7 +40,7 @@ void	PhoneBook::PrintContact(void)
 		while (i < this->index && i < 8)
 		{
 			std::cout << "         " << i + 1;
-			this->contacts[i].PrintShortContect();
+			this->contacts[i].PrintShortContact();
 			i++;
 		}
 		std::cout << "Please enter the number you want" << std::endl;
@@ -54,7 +54,7 @@ void	PhoneBook::PrintContact(void)
 		}
 		number = number - 1;
 		if (number <= 7 && number >= 0 && number < this->index)
-			contacts[number].PrintAllContect();
+			contacts[number].PrintAllContact();
 		else
 			std::cout << "Out of range" << std::endl;
 	}

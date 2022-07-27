@@ -6,13 +6,13 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 21:14:36 by youjeon           #+#    #+#             */
-/*   Updated: 2022/07/27 21:52:01 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/07/27 22:56:08 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-void	Contact::AddContect(void)
+void	Contact::AddContact(void)
 {
 	std::cout << "His(her) first name is..." << std::endl;
 	std::cin >> this->f_name;
@@ -35,7 +35,7 @@ std::string Contact::getShortStr(std::string str)
 		return (std::string(10 - static_cast<int>(str.size()), ' ') + str);
 }
 
-void	Contact::PrintShortContect(void)
+void	Contact::PrintShortContact(void)
 {
 	std::cout	<< "|" << getShortStr(this->f_name) \
 				<< "|" << getShortStr(this->l_name) \
@@ -43,7 +43,7 @@ void	Contact::PrintShortContect(void)
 				<< "|" << std::endl;
 }
 
-void	Contact::PrintAllContect(void)
+void	Contact::PrintAllContact(void)
 {
 	std::cout << "first name : " << this->f_name << std::endl;
 	std::cout << "last name : " << this->l_name << std::endl;

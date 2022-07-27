@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 21:14:33 by youjeon           #+#    #+#             */
-/*   Updated: 2022/07/27 21:28:55 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/07/27 22:56:09 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Contact
 		std::string secret;
 		std::string	getShortStr(std::string str);
 	public:
-		void	AddContect(void);
-		void	PrintShortContect(void);
-		void	PrintAllContect(void);
+		void	AddContact(void);
+		void	PrintShortContact(void);
+		void	PrintAllContact(void);
 };

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/27 21:14:36 by youjeon           #+#    #+#             */
+/*   Updated: 2022/07/27 21:52:01 by youjeon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 void	Contact::AddContect(void)
@@ -15,12 +27,12 @@ void	Contact::AddContect(void)
 	std::cout << "Save his(her) Contact." << std::endl;
 }
 
-static std::string getShortStr(std::string str)
+std::string Contact::getShortStr(std::string str)
 {
-	if (str.size() > 10)
+	if (static_cast<int>(str.size()) > 10)
 		return (str.substr(0, 9) + ".");
 	else
-		return (std::string(10 - str.size(), ' ') + str);
+		return (std::string(10 - static_cast<int>(str.size()), ' ') + str);
 }
 
 void	Contact::PrintShortContect(void)

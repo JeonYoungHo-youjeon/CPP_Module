@@ -1,4 +1,4 @@
-NAME		= megaphone
+NAME		= PhoneBook
 
 CC			= clang++
 RM			= rm -f
@@ -6,7 +6,9 @@ CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
 HEADER		= ./
 SRCS_DIR	= ./
-SRCS		= megaphone.cpp \
+SRCS		= main.cpp \
+			  Contact.cpp \
+			  PhoneBook.cpp \
 
 ALLSRCS	= $(addprefix $(SRCS_DIR), $(SRCS))
 OBJS	= $(ALLSRCS:.cpp=.o)

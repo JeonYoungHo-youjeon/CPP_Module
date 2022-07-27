@@ -17,7 +17,7 @@
 int	Account::_nbAccounts;
 int	Account::_totalAmount;
 int	Account::_totalNbDeposits;
-int Account::_totalNbWithdrawals;
+int	Account::_totalNbWithdrawals;
 
 void	Account::_displayTimestamp( void )
 {

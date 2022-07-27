@@ -1,4 +1,4 @@
-NAME		= megaphone
+NAME		= tests
 
 CC			= clang++
 RM			= rm -f
@@ -6,7 +6,8 @@ CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
 HEADER		= ./
 SRCS_DIR	= ./
-SRCS		= megaphone.cpp \
+SRCS		= tests.cpp \
+			  Account.cpp \
 
 ALLSRCS	= $(addprefix $(SRCS_DIR), $(SRCS))
 OBJS	= $(ALLSRCS:.cpp=.o)

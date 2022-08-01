@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 17:40:11 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/01 18:17:05 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/01 18:27:38 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ Zombie::~Zombie(void)
 
 void	Zombie::announce(void)
 {
-	std::cout << this->name <<  " : BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->name <<  " BraiiiiiiinnnzzzZ..." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 00:46:37 by youjeon           #+#    #+#             */
-/*   Updated: 2022/07/28 01:31:51 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/07/28 01:46:18 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	Account::_nbAccounts;
 int	Account::_totalAmount;
 int	Account::_totalNbDeposits;
-int Account::_totalNbWithdrawals;
+int	Account::_totalNbWithdrawals;
 
 void	Account::_displayTimestamp( void )
 {

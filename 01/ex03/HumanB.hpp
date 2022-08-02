@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 14:21:53 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/02 15:57:20 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/02 16:07:42 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class HumanB {
 	HumanB(std::string name);
 	~HumanB();
 	void setWeapon(Weapon &weapon);
-	void attack(void);
+	void attack(void) const;
 };
 
 #endif

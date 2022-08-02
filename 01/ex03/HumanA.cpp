@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 14:21:26 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/02 15:46:51 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/02 16:07:35 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ HumanA::~HumanA()
 
 }
 
-void	HumanA::attack(void)
+void	HumanA::attack(void) const
 {
 	std::cout << this->name << " attacks with his " << this->weapon.getType() << std::endl;
 }

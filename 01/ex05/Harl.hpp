@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/02 20:53:40 by youjeon           #+#    #+#             */
+/*   Updated: 2022/08/02 21:01:39 by youjeon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef HARL_HPP
+# define HARL_HPP
+
+# include <iostream>
+
+class Harl {
+ private:
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
+ public:
+	Harl(void);
+	~Harl();
+	void complain(std::string level);
+};
+
+#endif
+

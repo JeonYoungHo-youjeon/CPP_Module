@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 21:28:59 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/12 21:41:19 by youjeon          ###   ########.fr       */
+/*   Created: 2022/08/12 18:12:05 by youjeon           #+#    #+#             */
+/*   Updated: 2022/08/12 23:37:53 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "DiamondTrap.hpp"
 
-# include <iostream>
-# include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+int	main(void)
 {
- public:
-	FragTrap(void);
-	FragTrap(const FragTrap& obj);
-	FragTrap& operator=(const FragTrap& obj);
-	~FragTrap(void);
-	FragTrap(std::string name);
-	void highFivesGuys(void);
-};
+	DiamondTrap a("A");
 
-#endif
+	std::cout << std::endl;
+	
+	a.attack("A");
+	a.takeDamage(a.getDamege());
+	a.beRepaired(10);
+	std::cout << std::endl;
+
+	a.highFivesGuys();
+	a.guardGate();
+	a.whoAmI();
+	std::cout << std::endl;
+	a.printStatus();
+
+	std::cout << std::endl;
+
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:17:13 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/12 21:04:28 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/12 22:34:20 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class ClapTrap {
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& obj);
 	ClapTrap& operator=(const ClapTrap& obj);
-	~ClapTrap(void);
+	virtual ~ClapTrap(void);
 	unsigned int getDamege(void) const;
-	void attack(const std::string &target);
+	virtual void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };

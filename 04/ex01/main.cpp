@@ -6,43 +6,57 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:04:05 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/22 21:45:03 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/22 23:11:22 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 #include "Dog.hpp"
 
 int main(void)
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* wrong = new WrongCat();
+	Dog *d = new Dog();
+	Dog *d2 = new Dog();
+	std::string str;
+	Animal *meta[10];
 
-	std::cout << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	for (size_t i = 0; i < 10; i++)
+	{
+		if (i % 2)
+		{
+			meta[i] = new Dog();
+		}
+		else
+		{
+			meta[i] = new Cat();
+		}
+	}
 	std::cout << std::endl;
 	
-	std::cout << wrong->getType() << " " << std::endl;
-	wrong->makeSound();
+	for (size_t i = 0; i < 10; i++)
+	{
+		delete meta[i];
+	}
+	
 
 	std::cout << std::endl;
-	delete meta;
-	meta = NULL;
-	delete j;
-	j = NULL;
-	delete i;
-	i = NULL;
-	delete wrong;
-	wrong = NULL;
+	str = d->getBrain()->getIdeas(0);
+	std::cout << "Dog1's first idea is "<< str << std::endl;
+
+	d->getBrain()->setIdeas("something", 0);
+	str = d->getBrain()->getIdeas(0);
+	std::cout << "Dog1's first idea is "<< str << std::endl;
+
+	*d2 = *d;
+	str = d2->getBrain()->getIdeas(0);
+	std::cout << "Dog2's first idea is "<< str << std::endl;
+
+	std::cout << std::endl;
+	delete d;
+	d = NULL;
+	delete d2;
+	d2 = NULL;
+
 	return 0;
 }

@@ -1,0 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/22 20:04:05 by youjeon           #+#    #+#             */
+/*   Updated: 2022/08/22 23:19:03 by youjeon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+
+int main(void)
+{
+	Dog *d = new Dog();
+	Dog *d2 = new Dog();
+	std::string str;
+	Animal *meta[10];
+
+	for (size_t i = 0; i < 10; i++)
+	{
+		if (i % 2)
+		{
+			meta[i] = new Dog();
+		}
+		else
+		{
+			meta[i] = new Cat();
+		}
+	}
+	std::cout << std::endl;
+	
+	for (size_t i = 0; i < 10; i++)
+	{
+		delete meta[i];
+	}
+	
+
+	std::cout << std::endl;
+	str = d->getBrain()->getIdeas(0);
+	std::cout << "Dog1's first idea is "<< str << std::endl;
+
+	d->getBrain()->setIdeas("something", 0);
+	str = d->getBrain()->getIdeas(0);
+	std::cout << "Dog1's first idea is "<< str << std::endl;
+
+	*d2 = *d;
+	str = d2->getBrain()->getIdeas(0);
+	std::cout << "Dog2's first idea is "<< str << std::endl;
+
+	std::cout << std::endl;
+	delete d;
+	d = NULL;
+	delete d2;
+	d2 = NULL;
+
+	return 0;
+}

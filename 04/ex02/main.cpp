@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:04:05 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/22 23:19:03 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/24 16:26:27 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 int main(void)
 {
-	Dog *d = new Dog();
-	Dog *d2 = new Dog();
+	Animal *d = new Dog();
+	Animal *d2 = new Dog();
 	std::string str;
 	Animal *meta[10];
 
@@ -41,16 +41,8 @@ int main(void)
 	
 
 	std::cout << std::endl;
-	str = d->getBrain()->getIdeas(0);
-	std::cout << "Dog1's first idea is "<< str << std::endl;
-
-	d->getBrain()->setIdeas("something", 0);
-	str = d->getBrain()->getIdeas(0);
-	std::cout << "Dog1's first idea is "<< str << std::endl;
-
-	*d2 = *d;
-	str = d2->getBrain()->getIdeas(0);
-	std::cout << "Dog2's first idea is "<< str << std::endl;
+	d->makeSound();
+	d2->makeSound();
 
 	std::cout << std::endl;
 	delete d;

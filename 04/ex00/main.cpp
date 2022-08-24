@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:04:05 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/22 21:45:03 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/24 15:06:56 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int main(void)
 	const WrongAnimal* wrong = new WrongCat();
 
 	std::cout << std::endl;
-	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
 	i->makeSound();
+	std::cout << j->getType() << " " << std::endl;
 	j->makeSound();
+	std::cout << meta->getType() << " " << std::endl;
 	meta->makeSound();
 	std::cout << std::endl;
 	

@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 23:31:03 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 22:26:26 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/25 22:33:00 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int main()
 		std::cout << std::endl;
 		
 		// a.decrementGrade();
-	
 		// b.incrementGrade();
 	
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << std::endl;
+		// std::cout << a << std::endl;
+		// std::cout << b << std::endl;
+		// std::cout << std::endl;
+	
 		a.incrementGrade();
 		b.decrementGrade();
 		std::cout << a << std::endl;

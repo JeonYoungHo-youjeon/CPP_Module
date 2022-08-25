@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 23:31:03 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 22:15:16 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/25 22:26:26 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@ int main()
 {
 	try
 	{
+		try
+		{
+			Bureaucrat test("test", 200);	
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		
 		Bureaucrat a("a", 150);
 		Bureaucrat b("b", 1);
 

@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 23:31:03 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/24 23:40:46 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/25 22:15:16 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,32 @@
 
 int main()
 {
-	Bureaucrat a("a", 150);
-	Bureaucrat b("b", 1);
+	try
+	{
+		Bureaucrat a("a", 150);
+		Bureaucrat b("b", 1);
 
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << std::endl;
-
-	try
-	{
-		a.decrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << std::endl;
+		
+		// a.decrementGrade();
 	
-	try
-	{
-		b.incrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+		// b.incrementGrade();
 	
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << std::endl;
-	try
-	{
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << std::endl;
 		a.incrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	try
-	{
 		b.decrementGrade();
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 	
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 23:31:03 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 22:01:15 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/25 22:18:09 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 int main()
 {
-	Bureaucrat a("a", 1);
-	Intern b;
-
 	try
 	{
+		Bureaucrat a("a", 1);
+		Intern b;
+
 		Form* rrf;
 		rrf = b.makeForm("robotomy requet", "Bender");
 

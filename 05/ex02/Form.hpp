@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:55:36 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 20:55:20 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/26 13:01:27 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,21 @@ class Form {
 		public:
 		  const char * what(void) const throw();
 	};
-	class ThisIsNotSignedException : public std::exception
-	{
-		public:
-		  const char * what(void) const throw();
-	};
 	const std::string& getName(void) const;
 	bool getSigned(void) const;
 	int getSignGrade(void) const;
 	int getExecGrade(void) const;
 	void beSigned(const Bureaucrat& b);
 
+	class ThisIsNotSignedException : public std::exception
+	{
+		public:
+		  const char * what(void) const throw();
+	};
 	virtual void execute(const Bureaucrat& b) const = 0;
 	void checkExec(const Bureaucrat& b) const;
 	void setName(std::string name);
 	void setSigned(bool b);
-
 };
 
 std::ostream& operator<<(std::ostream& out, const Form& f);

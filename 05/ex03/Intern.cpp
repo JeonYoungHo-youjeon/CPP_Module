@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:13:26 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 22:00:22 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/27 23:16:09 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ Intern& Intern::operator=(const Intern& obj)
 
 Intern::~Intern(void)
 {
+	delete f[0];
+	delete f[1];
+	delete f[2];
 }
 
 Form* Intern::makeForm(std::string type, std::string name)

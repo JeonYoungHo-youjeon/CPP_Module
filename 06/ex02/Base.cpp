@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 02:21:48 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/01 02:49:19 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/01 03:12:09 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,24 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-	try
+	try 
 	{
-		if (dynamic_cast<A *>(&p))
-			std::cout << "reference is A\n";
-		else if (dynamic_cast<B *>(&p))
-			std::cout << "reference is B\n";
-		else if (dynamic_cast<C *>(&p))
-			std::cout << "reference is C\n";
+		A &a = dynamic_cast<A&>(p);
+		std::cout << "reference is A\n";
+		static_cast<void>(a);
 	}
-	catch(const std::exception& e)
+  	catch (std::exception&) {}
+	try 
 	{
-		std::cerr << e.what() << '\n';
+		B &b = dynamic_cast<B&>(p);
+		std::cout << "reference is B\n";
+		static_cast<void>(b);
 	}
+  	catch (std::exception&) {}
+	try {
+		C &c = dynamic_cast<C&>(p);
+		std::cout << "reference is C\n";
+		static_cast<void>(c);
+	}
+  	catch (std::exception&) {}
 }

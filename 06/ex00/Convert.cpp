@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:09:48 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/31 18:44:49 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/31 20:57:04 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void Convert::setValue(std::string s)
 	}
 	else if (n == static_cast<unsigned long>(-1)) // npos일때 = .을 찾지 못했을경우 = int
 	{
-		val_int = std::atoi(s.c_str());
+		val_int = atoi(s.c_str());
 
 		std::stringstream ss;
 		ss << val_int;
@@ -129,7 +129,7 @@ void Convert::setValue(std::string s)
 		const char *str = s.c_str();
 		char *end = NULL;
 
-		val_double = std::strtod(str, &end);
+		val_double = strtod(str, &end);
 		
 		if((*end && !(*end == 'f' && end == &str[s.length() - 1])))
 		{

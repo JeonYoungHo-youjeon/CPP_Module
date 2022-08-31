@@ -2,7 +2,7 @@ NAME		= convert
 
 CC			= c++
 RM			= rm -f
-CFLAGS		= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
+CFLAGS		= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98 -pedantic
 
 HEADER		= ./
 SRCS_DIR	= ./

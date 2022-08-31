@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:09:48 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/31 20:57:04 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/01 00:56:43 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,14 +91,14 @@ void Convert::setValue(std::string s)
 			}
 		}
 	}
-	else if (s.length() == 1 && !std::isdigit(static_cast<char>(s[0]))) // 한자리수이며 숫자가 아닌 문자 = char
+	else if (s.length() == 1 && !std::isdigit(static_cast<char>(s[0])))
 	{
 		val_char = static_cast<char>(s[0]);
 		val_int = static_cast<int>(val_char);
 		val_float = static_cast<float>(val_char);
 		val_double = static_cast<double>(val_char);
 	}
-	else if (n == static_cast<unsigned long>(-1)) // npos일때 = .을 찾지 못했을경우 = int
+	else if (n == std::string::npos)
 	{
 		val_int = atoi(s.c_str());
 
@@ -124,7 +124,7 @@ void Convert::setValue(std::string s)
 			val_double = static_cast<double>(val_int);
 		}
 	}
-	else // 그 외 경우는 실수이므로 변환 후 처리
+	else
 	{
 		const char *str = s.c_str();
 		char *end = NULL;
@@ -253,9 +253,9 @@ std::ostream& operator<<(std::ostream &out, const Convert &b)
 	{
 		if (static_cast<float>(b.getInt()) == b.getFloat())
 		{
-			if (ss.str().size() > 6)
+			if (ss.str().length() > 6)
 			{
-				out << "float: " << b.printFloat() << std::endl;
+				out << "float: " << b.printFloat() << "f" << std::endl;
 			}
 			else
 			{
@@ -276,7 +276,7 @@ std::ostream& operator<<(std::ostream &out, const Convert &b)
 	{
 		if (static_cast<double>(b.getInt()) == b.getDouble())
 		{
-			if (ss.str().size() > 6)
+			if (ss.str().length() > 6)
 			{
 				out << "double: " << b.printDouble() << std::endl;
 			}

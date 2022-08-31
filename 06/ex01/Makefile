@@ -1,4 +1,4 @@
-NAME		= convert
+NAME		= a.out
 
 CC			= c++
 RM			= rm -f
@@ -7,7 +7,6 @@ CFLAGS		= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 HEADER		= ./
 SRCS_DIR	= ./
 SRCS		= main.cpp \
-			  Convert.cpp \
 
 ALLSRCS	= $(addprefix $(SRCS_DIR), $(SRCS))
 OBJS	= $(ALLSRCS:.cpp=.o)

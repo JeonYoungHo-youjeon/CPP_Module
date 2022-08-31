@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:09:48 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/31 01:24:26 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/08/31 18:44:49 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,7 @@ void Convert::setValue(std::string s)
 	}
 	
 	n = s.find('.');
-	f = s.find('f');
-
+	f = s.find('f', s.length() - 1);
 	if (value == "nan" || value == "inf" || value == "+inf" || value == "-inf" || value == "nanf" || value == "inff" || value == "+inff" || value == "-inff")
 	{
 		if (value == "nan" || value == "nanf")
@@ -104,11 +103,19 @@ void Convert::setValue(std::string s)
 		val_int = std::atoi(s.c_str());
 
 		std::stringstream ss;
-		
 		ss << val_int;
 		if (ss.str() != value)
 		{
-			err = true;
+			if (val_int > 0 && f == s.length() - 1)
+			{
+				val_char = static_cast<char>(val_int);
+				val_float = static_cast<float>(val_int);
+				val_double = static_cast<double>(val_int);
+			}
+			else
+			{
+				err = true;
+			}
 		}
 		else
 		{
@@ -117,19 +124,24 @@ void Convert::setValue(std::string s)
 			val_double = static_cast<double>(val_int);
 		}
 	}
-	else if (f != static_cast<unsigned long>(-1)) // npos가 아닐때 = float 
-	{
-		val_float = std::atof(s.c_str());
-		val_int = static_cast<int>(val_float);
-		val_char = static_cast<char>(val_float);
-		val_double = static_cast<double>(val_float);
-	}
 	else // 그 외 경우는 실수이므로 변환 후 처리
 	{
-		val_double = std::strtod(s.c_str(), NULL);
-		val_int = static_cast<int>(val_double);
-		val_char = static_cast<char>(val_double);
-		val_float = static_cast<float>(val_double);
+		const char *str = s.c_str();
+		char *end = NULL;
+
+		val_double = std::strtod(str, &end);
+		
+		if((*end && !(*end == 'f' && end == &str[s.length() - 1])))
+		{
+			err = true;
+		}
+		else
+		{
+			val_int = static_cast<int>(val_double);
+			val_char = static_cast<char>(val_double);
+			val_float = static_cast<float>(val_double);
+		}
+		
 	}	
 }
 
@@ -138,7 +150,7 @@ char Convert::printChar(void) const
 	std::stringstream ss;
 	
 	ss << val_int;
-	if (err || ss.str() != value || std::isnan(val_double) || std::isinf(val_double))
+	if (err || std::isnan(val_double) || std::isinf(val_double))
 		throw std::runtime_error("impossible");
 	else if (val_int >= 32 && val_int <= 126)
 		return (val_char);
@@ -216,6 +228,9 @@ bool Convert::getErr(void) const
 
 std::ostream& operator<<(std::ostream &out, const Convert &b)
 {
+	std::stringstream ss;
+	ss << b.getInt();
+
 	try
 	{
 		out << "char: " << b.printChar() << std::endl;
@@ -238,11 +253,18 @@ std::ostream& operator<<(std::ostream &out, const Convert &b)
 	{
 		if (static_cast<float>(b.getInt()) == b.getFloat())
 		{
-			out << "float: " << b.printFloat() << ".0f" << std::endl;
+			if (ss.str().size() > 6)
+			{
+				out << "float: " << b.printFloat() << std::endl;
+			}
+			else
+			{
+				out << "float: " << b.printFloat() << ".0f" << std::endl;
+			}
 		}
 		else
 		{
-			out << "float: " << b.printFloat() << std::endl;
+			out << "float: " << b.printFloat() << "f" <<std::endl;
 		}
 	}
 	catch(const std::exception& e)
@@ -254,7 +276,15 @@ std::ostream& operator<<(std::ostream &out, const Convert &b)
 	{
 		if (static_cast<double>(b.getInt()) == b.getDouble())
 		{
-			out << "double: " << b.printDouble() << ".0" << std::endl;
+			if (ss.str().size() > 6)
+			{
+				out << "double: " << b.printDouble() << std::endl;
+			}
+			else
+			{
+				out << "double: " << b.printDouble() << ".0" << std::endl;
+			}
+
 		}
 		else
 		{

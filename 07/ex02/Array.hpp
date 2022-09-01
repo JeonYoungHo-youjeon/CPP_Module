@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 22:21:12 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/02 00:21:41 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/02 00:41:19 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <stdexcept>
+
 template <typename T>
 class Array {
  private:

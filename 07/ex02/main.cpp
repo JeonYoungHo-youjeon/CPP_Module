@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 22:20:42 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/02 00:27:20 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/02 00:32:16 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
+	for (int i = 0; i < MAX_VAL; i++)
+    {
+        std::cout << numbers[i] << " ";
+    }
+	std::cout << std::endl;
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)

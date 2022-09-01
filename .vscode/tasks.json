@@ -9,11 +9,7 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}/main.o",
-        "${fileDirname}/Animal.o",
-        "${fileDirname}/Dog.o",
-        "${fileDirname}/Cat.o",
-        "${fileDirname}/Brain.o"
+        "${fileDirname}/main.o"
       ],
       "options": {
         "cwd": "${fileDirname}"

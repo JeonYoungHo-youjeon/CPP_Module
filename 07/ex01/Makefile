@@ -2,7 +2,7 @@ NAME		= a.out
 
 CC			= c++
 RM			= rm -f
-CFLAGS		= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
+CFLAGS		= -Wall -Werror -Wextra-std=c++98
 
 HEADER		= ./
 SRCS_DIR	= ./

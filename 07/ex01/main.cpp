@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 21:40:48 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/01 21:59:55 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/01 22:14:50 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int main()
 
 	iter(i, 10, print<int>);
 	std::cout << std::endl;
-
 	iter(c, 5, print<char>);
 	std::cout << std::endl;
 
-	::iter(i, 10, printSqrt);
+	::iter(i, 10, sqrt);
+	::iter(i, 10, print);
 	std::cout << std::endl;
 
 	return (0);

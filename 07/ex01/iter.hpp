@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 21:26:37 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/01 21:52:57 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/01 22:14:09 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 template<typename T>
-void iter (T *array, size_t length, void (*fn)(T))
+void iter (T *array, size_t length, void (*fn)(T&))
 {
 	for (size_t i = 0; i < length; i++)
 	{
@@ -25,16 +25,15 @@ void iter (T *array, size_t length, void (*fn)(T))
 }
 
 template<typename T>
-void print(T str)
+void print(T &str)
 {
 	std::cout << str << " ";
 }
 
 template<typename T>
-void printSqrt(T num)
+void sqrt(T &num)
 {
-	T tmp = num * num;
-	std::cout << tmp << " ";
+	num = num * num;
 }
 
 #endif

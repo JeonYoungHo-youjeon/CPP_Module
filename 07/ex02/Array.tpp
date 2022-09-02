@@ -6,12 +6,10 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 00:15:08 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/02 00:42:28 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/02 23:06:37 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <fstream>
 template <typename T>
 T& Array<T>::operator[] (std::size_t i)
 {

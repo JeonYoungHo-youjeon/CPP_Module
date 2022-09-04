@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 15:48:15 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/04 17:24:56 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/04 17:32:05 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <exception>
 # include <stdexcept>
 # include <iterator>
+# include <climits>
 
 
 class Span {

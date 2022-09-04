@@ -6,12 +6,11 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 15:48:09 by youjeon           #+#    #+#             */
-/*   Updated: 2022/09/04 17:25:06 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/04 17:32:21 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <climits>
 
 Span::Span(const Span& obj)
 {

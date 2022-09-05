@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 22:55:18 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/24 23:40:29 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/05 14:43:54 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat& obj) : name(obj.getName())
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj)
 {
+	if(this == &obj) return *this;
+	
 	const_cast<std::string&>(this->name) = obj.getName();
 	this->grade = obj.getGrade();
 	if (grade < 1)

@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:13:26 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/27 23:16:09 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:29:19 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Intern::Intern(const Intern& obj)
 
 Intern& Intern::operator=(const Intern& obj)
 {
+	if(this == &obj) return *this;
 	(void)obj;
 	return (*this);
 }

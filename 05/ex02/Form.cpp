@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:03:07 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 20:55:26 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/05 14:44:45 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Form::Form(const Form& obj) : name(obj.getName()), _signed(obj.getSigned()), sig
 
 Form& Form::operator=(const Form& obj)
 {
+	if(this == &obj) return *this;
 	const_cast<std::string &>(this->name) = obj.getName();
 	const_cast<int &>(this->signGrade) = obj.getSignGrade();
 	const_cast<int &>(this->execGrade) = obj.getExecGrade();

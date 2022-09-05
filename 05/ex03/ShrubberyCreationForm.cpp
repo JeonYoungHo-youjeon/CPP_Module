@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:45:01 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 21:53:39 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:29:28 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& obj) :
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& obj)
 {
+	if(this == &obj) return *this;
 	this->setSigned(obj.getSigned());
 	this->setName(obj.getName());
 	return (*this);

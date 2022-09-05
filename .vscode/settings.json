@@ -69,6 +69,7 @@
     "functional": "cpp",
     "iterator": "cpp",
     "utility": "cpp",
-    "version": "cpp"
+    "version": "cpp",
+    "list": "cpp"
   }
 }

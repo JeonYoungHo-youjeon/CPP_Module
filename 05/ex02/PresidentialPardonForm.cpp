@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 20:36:59 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 20:56:10 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:28:42 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& obj
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& obj)
 {
+	if(this == &obj) return *this;
 	this->setSigned(obj.getSigned());
 	this->setName(obj.getName());
 	return (*this);

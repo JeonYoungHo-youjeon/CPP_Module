@@ -6,7 +6,7 @@
 /*   By: youjeon <youjeon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 20:22:51 by youjeon           #+#    #+#             */
-/*   Updated: 2022/08/25 20:59:33 by youjeon          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:28:43 by youjeon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& obj) : Form(
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& obj)
 {
+	if(this == &obj) return *this;
 	this->setSigned(obj.getSigned());
 	this->setName(obj.getName());
 	return (*this);

@@ -20,6 +20,7 @@ Span::Span(const Span& obj)
 
 Span& Span::operator=(const Span& obj)
 {
+	if(this == &obj) return *this;
 	this->size = obj.getSize();
 	v = obj.getVector();
 	return (*this);
